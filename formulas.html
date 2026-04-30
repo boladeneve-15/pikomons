@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundo Animado</title>
+
+    <style>
+        body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background: linear-gradient(
+        -45deg,
+        #2afd00,
+        #004faa,
+        #03be90,
+        #00e0fd
+    );
+    background-size: 400% 400%;
+    animation: fundoAnimado 10s ease infinite;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h3{
+    color: white;
+    font-size: 28px;
+    margin: 10px 0;
+    text-shadow: 0 3px 10px rgba(0,0,0,.3);
+}
+
+.linha{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.f{
+    font-size: 20px;
+    border: none;
+    border-radius: 18px;
+    height: 65px;
+    width: 220px;
+    background: rgba(255,255,255,.95);
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.f:hover{
+    transform: translateY(-5px) scale(1.03);
+    background: white;
+}
+
+.f:active{
+    transform: scale(.96);
+}
+
+/* CELULAR */
+@media (max-width: 768px){
+
+    h3{
+        font-size: 24px;
+    }
+
+    .linha{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .f{
+        width: 80%;
+        max-width: 350px;
+        height: 50px;
+        font-size: 18px;
+    }
+    f:active{
+    transform: scale(.96);} 
+
+}
+    </style>
+</head>
+<body> 
+     <h3>Formulas</h3> 
+     <h6>NÃO USE VIRGULA POIS O JavaScript NÃO ACEITA, USE PONTO AO INVEIS DE VIRGULA</h6>
+    <div class="linha">
+      
+ <button class="f " onclick="Delta()">  formula de delta</button>
+ <button class="f " onclick="imc()">  formula do IMC</button>
+ <button class="f " onclick="Triangulo()">formula do triângulo</button>
+ <button class="f " onclick="quadrado()">formula do quadrado</button>
+
+   </div>
+   <h3>Conversores</h3>
+    <div class="linha">
+ <button class="f " onclick="Celsius()">  °C para °F</button>
+ <button class="f " onclick="Fahrenheit()">  °F para °C</button>
+ <button class="f " onclick="Kelvin()">  K para °C</button>
+   </div>
+
+</body>
+<script> 
+function Delta() {
+    b = prompt ("valor de b²")
+    a = prompt ("valor de a")
+    c = prompt ("valor de c")
+    DELTA =(b**2)- (4*a*c);
+    alert(DELTA);
+}
+function imc() {
+    p = prompt ("qual o seu peso?") 
+    p = parseFloat(p);
+    a = prompt ("qual a sua altura?")
+    a = parseFloat(a);
+    IMC = p / (a**2);
+    alert(IMC  + " é o seu IMC");
+}
+function Triangulo() {
+    b = prompt ("valor da base do triângulo")
+    h = prompt ("valor de altura do triângulo")
+    area =(b*h)/2;
+    alert(area);
+}
+function Celsius() {
+    c = prompt ("qual a temperatura em graus celsius?")
+    c = parseFloat(c);
+    f = (c * 9/5) + 32;
+    alert(f + " é a temperatura em Fahrenheit");
+}
+function Fahrenheit() {
+    f = prompt ("qual a temperatura em Fahrenheit?")
+    f = parseFloat(f);
+    c = (f - 32) * 5/9;
+    alert(c + " é a temperatura em Celsius");
+}
+function Kelvin() {
+    k = prompt ("qual a temperatura em Kelvin?")
+    k = parseFloat(k);
+    c = k - 273.15;
+    alert(c + " é a temperatura em Celsius");
+}
+
+function quadrado() {
+    lado = prompt("qual o valor do lado do quadrado?")
+    lado = parseFloat(lado);
+    area = lado ** 2;
+    alert(area);
+}
+
+
+
+</script>
+</html>
